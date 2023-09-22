@@ -54,7 +54,7 @@ type MyUser = {
 type UserPartial = MyPartial<MyUser>
 
 
-    
+
 
 
 //=>👇官方文档解读
@@ -63,13 +63,13 @@ type UserPartial = MyPartial<MyUser>
 //    映射类型基于索引签名的语法，索引签名用于声明尚未提前声明的属性类型
 type Horse = {}
 type OnlyBoolsAndHorses = {
-  [key: string]: boolean | Horse; 
+  [key: string]: boolean | Horse;
 }
 
 const conforms: OnlyBoolsAndHorses = {
   del: true,
   rodney: false
-} 
+}
 
 // 2. 映射类型是泛型类型，它使用 PropertyKeys (通常通过 keyof 创建)的联合来迭代键以创建类型
 type OptionsFlags<Type> = {
@@ -157,7 +157,7 @@ type KindLessCircle = RemoveKindField<Circle>
 
 
 // 您可以映射任意的联合，不仅可以映射字符串 | 数字 | 符号的联合，还可以映射任何类型的联合
-type EventConfig<Events extends {kind: string}> = {
+type EventConfig<Events extends { kind: string }> = {
   [E in Events as E["kind"]]: (event: E) => void;
 }
 
@@ -176,12 +176,12 @@ type Config = EventConfig<SquareEvent | CircleEvent>
 // 在这个类型操作小节中，映射类型与其他特性一起工作得很好，
 // 例如，这里有一个使用条件类型的映射类型，根据对象是否将属性 pii 设置为文字 true，该类型返回 true 或 false:
 type ExtractPII<Type> = {
-  [Property in keyof Type]: Type[Property] extends {pii: true} ? true : false;
+  [Property in keyof Type]: Type[Property] extends { pii: true } ? true : false;
 }
 
 type DBFields = {
-  id: { format: "incrementing"};
-  name: { type: string, pii: true}
+  id: { format: "incrementing" };
+  name: { type: string, pii: true }
 }
 
 type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>
