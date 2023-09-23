@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Ensures that every non-declaration file is treated as a module.
-    "moduleDetection": "force",
+    // "moduleDetection": "force",
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Projects */
