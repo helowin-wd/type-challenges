@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/helowin-wd/type-challenges#readme",
   "dependencies": {
-    "@type-challenges/utils": "^0.1.1"
+    "@type-challenges/utils": "^0.1.1",
+    "ts": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.3"
   }
 }
